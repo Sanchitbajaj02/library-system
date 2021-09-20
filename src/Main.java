@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 public class Main implements ActionListener {
     JFrame frame;
     JLabel LoginLabel= new JLabel("Library System");
-    JButton bt1 = new JButton("Enter a record");
+    JButton bt1 = new JButton("Signup");
+    JButton bt2 = new JButton("Login");
 
     Main()
     {
@@ -29,17 +30,24 @@ public class Main implements ActionListener {
     {
         LoginLabel.setBounds(210,100,400,50);
         LoginLabel.setFont(LoginLabel.getFont().deriveFont(Float.parseFloat("24")));
+
         bt1.setBounds(90,200,400,50);
         bt1.setFont(bt1.getFont().deriveFont(Float.parseFloat("18")));
+
+        bt2.setBounds(90,300,400,50);
+        bt2.setFont(bt2.getFont().deriveFont(Float.parseFloat("18")));
 
     }
     public void addComponentsToFrame(){
         frame.add(LoginLabel);
         frame.add(bt1);
+        frame.add(bt2);
     }
     public void actionEvent()
     {
         bt1.addActionListener(this);
+        bt2.addActionListener(this);
+
     }
 
     public static void main(String[] args)
@@ -48,8 +56,16 @@ public class Main implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent a){
-        Record recordObj = new Record();
-        frame.hide();
+        System.out.println(a.getActionCommand());
+
+        if (a.getActionCommand().equals("Signup")) {
+            Record recordObj = new Record();
+            frame.dispose();
+        } else if (a.getActionCommand().equals("Login")) {
+            Login loginObj = new Login();
+            frame.dispose();
+
+        }
     }
 }
 

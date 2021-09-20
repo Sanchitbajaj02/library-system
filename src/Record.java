@@ -35,7 +35,7 @@ public class Record implements ActionListener {
 
     public void createWindow()
     {
-        frame=new JFrame();
+        frame = new JFrame();
         frame.setTitle("Record Entry");
         frame.setBounds(40,40,600,500);
 //        frame.getContentPane().setBackground(Color.pink);
@@ -104,7 +104,7 @@ public class Record implements ActionListener {
         if(e.getSource() == registerButton)
         {
             try {
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/ajava_lab","root","");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_system","root","");
                 PreparedStatement Pstatement = connection.prepareStatement("insert into library values(?,?,?,?,?)");
                 Pstatement.setString(1,bookNameTF.getText());
                 Pstatement.setString(2,authorNameTF.getText());
