@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 public class Main implements ActionListener {
     JFrame frame;
     JLabel LoginLabel= new JLabel("Library System");
-    JButton bt1 = new JButton("Signup");
-    JButton bt2 = new JButton("Login");
+    JButton bt1 = new JButton("Add Record");
+    JButton bt2 = new JButton("Entries");
 
     Main()
     {
@@ -58,11 +58,11 @@ public class Main implements ActionListener {
     public void actionPerformed(ActionEvent a){
         System.out.println(a.getActionCommand());
 
-        if (a.getActionCommand().equals("Signup")) {
+        if (a.getActionCommand().equals("Add Record")) {
             Record recordObj = new Record();
             frame.dispose();
-        } else if (a.getActionCommand().equals("Login")) {
-            Login loginObj = new Login();
+        } else if (a.getActionCommand().equals("Entries")) {
+            Entries entriesObj = new Entries();
             frame.dispose();
 
         }

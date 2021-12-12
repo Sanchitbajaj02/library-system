@@ -105,7 +105,7 @@ public class Record implements ActionListener {
         {
             try {
                 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_system","root","");
-                PreparedStatement Pstatement = connection.prepareStatement("insert into library values(?,?,?,?,?)");
+                PreparedStatement Pstatement = connection.prepareStatement("insert into book values(?,?,?,?,?)");
                 Pstatement.setString(1,bookNameTF.getText());
                 Pstatement.setString(2,authorNameTF.getText());
                 Pstatement.setString(3,dateTF.getText());
